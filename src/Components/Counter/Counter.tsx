@@ -1,10 +1,8 @@
-import s from './Counter.module.css'
-
-type Counter={
-    value: number
+import s from "./Counter.module.css"
+type CounterType={
+    value:number
 }
 
-export const Counter=(props:Counter)=>{
-
-    return <div className={s.Counter}>{props.value}</div>
+export const Counter=(props:CounterType)=>{
+    return <span className={s.Counter__Value}>{props.value}</span>
 }

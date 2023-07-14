@@ -39,26 +39,10 @@
   justify-content: center;
   align-items: center;
   color: #000;
-  font-size: 40px;
-
 }
 
 .Countert {
   border: 2px solid #61dafb;
   padding: 20px;
   display: inline-block;
-}
-.Countert__Wrapper{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-}
-.Countert__Buutons{
-  border: 2px solid #61dafb;
-display: flex;
-  padding: 10px;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
 }

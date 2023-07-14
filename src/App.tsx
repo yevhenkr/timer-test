@@ -1,26 +1,30 @@
 import React, {useState} from 'react';
 import './App.css';
-import {Button} from './Components/Button/Button';
 import {Counter} from './Components/Counter/Counter';
+import {Button} from './Components/Button/Button';
 
 function App() {
-    const [minCount, maxCount] = [0, 5]
-    const [counter, counterSet] = useState<number>(minCount)
-    const addClick = () => {
-        if (counter < maxCount) {
-            counterSet(counter + 1)
+    const [minValueCounter, maxValueCounter] = [0, 5]
+    const [couterValue, couterValueSet] = useState<number>(minValueCounter)
+
+    const addCount = () => {
+        couterValueSet(couterValue + 1)
+        if (couterValue >= maxValueCounter) {
+            resetCounter()
         }
     }
-    const resetClick = () => {
-        counterSet(minCount)
+    const resetCounter = () => {
+        couterValueSet(minValueCounter)
     }
     return (
-        <div className="backgrounde">
-            <div className="App container">
-                <Counter value={counter}/>
-                <div className="Buttons">
-                    <Button isDisabled={counter === maxCount} callBack={addClick}>inc</Button>
-                    <Button isDisabled={counter === minCount} callBack={resetClick}>reset</Button>
+        <div className={'backgrounde'}>
+            <div className={'Countert'}>
+                <div className={'Countert__Wrapper'}>
+                    <Counter value={couterValue}/>
+                </div>
+                <div className={'Countert__Buutons'}>
+                    <Button callBack={addCount} children={'incr'} isDisabled={couterValue === maxValueCounter}/>
+                    <Button callBack={resetCounter} children={'reset'} isDisabled={couterValue === minValueCounter}/>
                 </div>
             </div>
         </div>
