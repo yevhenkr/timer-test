@@ -1,11 +1,13 @@
-import React from 'react';
+import s from './Button.module.css';
 
-type ButtonType={
+
+type ButtonType = {
+    name: string
     callBack: ()=>void
-    children: React.ReactNode
     isDisabled: boolean
 }
 
-export const Button=(props:ButtonType)=>{
-    return <button disabled={props.isDisabled} onClick={props.callBack}>{props.children}</button>
+export const Button = (props: ButtonType) => {
+    return <button className={s.Button}
+        onClick={props.callBack} disabled={props.isDisabled}>{props.name}</button>
 }

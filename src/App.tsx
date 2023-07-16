@@ -4,27 +4,24 @@ import {Counter} from './Components/Counter/Counter';
 import {Button} from './Components/Button/Button';
 
 function App() {
-    const [minValueCounter, maxValueCounter] = [0, 5]
-    const [couterValue, couterValueSet] = useState<number>(minValueCounter)
-
-    const addCount = () => {
-        couterValueSet(couterValue + 1)
-        if (couterValue >= maxValueCounter) {
-            resetCounter()
+    const [minCount, maxCount] = [0, 5]
+    const [counterValue, counterValueSet] = useState(minCount)
+    const addValue = () => {
+        if (counterValue < maxCount) {
+            counterValueSet(counterValue + 1)
         }
     }
-    const resetCounter = () => {
-        couterValueSet(minValueCounter)
+    const resetValue = () => {
+        counterValueSet(minCount)
     }
+
     return (
-        <div className={'backgrounde'}>
-            <div className={'Countert'}>
-                <div className={'Countert__Wrapper'}>
-                    <Counter value={couterValue}/>
-                </div>
-                <div className={'Countert__Buutons'}>
-                    <Button callBack={addCount} children={'incr'} isDisabled={couterValue === maxValueCounter}/>
-                    <Button callBack={resetCounter} children={'reset'} isDisabled={couterValue === minValueCounter}/>
+        <div className="Wrapper">
+            <div className="Wrapper__Counter">
+                <Counter value={counterValue} color={`${counterValue === maxCount ? 'red' : 'white'}`}/>
+                <div className="Button-Wrapper">
+                    <Button name={'Add'} callBack={addValue} isDisabled={counterValue >= maxCount}/>
+                    <Button name={'Reset'} callBack={resetValue} isDisabled={counterValue === minCount}/>
                 </div>
             </div>
         </div>

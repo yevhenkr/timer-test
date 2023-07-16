@@ -1,64 +1,23 @@
-.App {
-  text-align: center;
-  border: 2px solid #61dafb;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
+.Wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    Color: #17fdfd;
+    font-size: 20px;
+    background-color: #000;
 }
 
-.container {
-  max-width: 300px;
-  padding: 0 15px;
-  width: 100%;
-  margin: 0 auto;
+.Wrapper__Counter {
+    border: solid 2px #17fdfd;
+    border-radius: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
-.Buttons{
-  padding-bottom: 20px;
-}
-
-.backgrounde {
-  background-color: black;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.Countert {
-  border: 2px solid #61dafb;
-  padding: 20px;
-  display: inline-block;
-  border-radius: 10px;
-}
-.backgrounde {
-  background-color: black;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #000;
-  font-size: 40px;
-
-}
-
-.Countert {
-  border: 2px solid #61dafb;
-  padding: 20px;
-  display: inline-block;
-}
-.Countert__Wrapper{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-}
-.Countert__Buutons{
-  border: 2px solid #61dafb;
-display: flex;
-  padding: 10px;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+.Button-Wrapper {
+    display: flex;
+    margin-bottom: 20px;
+    column-gap: 20px;
 }
