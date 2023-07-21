@@ -1,7 +1,8 @@
 .Wrapper {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row-reverse;
+    column-gap: 20px;
+    align-items: flex-start;
     justify-content: center;
     height: 100vh;
     Color: #17fdfd;
@@ -12,12 +13,40 @@
 .Wrapper__Counter {
     border: solid 2px #17fdfd;
     border-radius: 10px;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding: 20px;
+
+}
+
+.Wrapper__Settings {
+    border: solid 2px #17fdfd;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.Wrapper__Settings-Input {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 20px;
 }
 
 .Button-Wrapper {
     display: flex;
     margin-bottom: 20px;
     column-gap: 20px;
+    border: solid 2px #17fdfd;
+    padding: 15px 25px;
+    border-radius: 10px;
+}
+
+.Input {
+    max-width: 80px;
+    display: flex;
+    align-items: end;
+    text-align: center;
+    width: 200px; /* Ширина поля ввода (можете настроить по своему усмотрению) */
+    padding: 10px; /* Отступы вокруг текста внутри поля ввода */
+    font-size: 16px; /* Размер шрифта (можете настроить по своему усмотрению) */
+    border: 1px solid #ccc; /* Граница поля ввода (можете настроить цвет и стиль) */
+    border-radius: 5px; /* Закругление углов поля ввода (можете настроить по своему усмотрению) */
 }
