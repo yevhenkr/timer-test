@@ -6,6 +6,7 @@ import {Button} from './Components/Button/Button';
 function App() {
     const [minCount, maxCount] = [0, 5]
     const [counterValue, counterValueSet] = useState(minCount)
+    const [inputValue, setInputValue] = useState('');
     const addValue = () => {
         if (counterValue < maxCount) {
             counterValueSet(counterValue + 1)
@@ -17,34 +18,16 @@ function App() {
     const limitToDigits = (event: ChangeEvent<HTMLInputElement>) => {
         const inputElement = event.target;
         const inputValue = inputElement.value;
-        // Удалить все символы, кроме цифр
+        setInputValue(inputElement.value)
         const digitsOnly = inputValue.replace(/[^\d]/g, '');
-
-        // Переместить курсор в центр поля ввода
-        // const midpoint = Math.floor(inputElement.maxLength / 2);
-        // const centeredValue = digitsOnly.padStart(midpoint, ' ').padEnd(inputElement.maxLength, ' ');
-
-        // Обновить значение поля ввода
         inputElement.value = digitsOnly;
     };
 
     function handleArrowKeys(event: DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>) {
-        console.log('event = ' + event)
-        // const inputElement = event.;
-        // const inputValue = inputElement.value
-        // const numberValue = parseInt(inputValue, 10);
-        //
-        // if (!isNaN(numberValue)) {
-        //     if (event.key === 'ArrowUp') {
-        //         event.preventDefault();
-        //         inputElement.value = (numberValue + 1).toString();
-        //         limitToDigits(inputElement.value);
-        //     } else if (event.key === 'ArrowDown') {
-        //         event.preventDefault();
-        //         inputElement.value = (numberValue - 1).toString();
-        //         limitToDigits(inputElement.value);
-        //     }
-        // }
+    }
+
+    function setButtonCklick() {
+
     }
 
     return (
@@ -56,11 +39,13 @@ function App() {
                     <Button name={'Reset'} callBack={resetValue} isDisabled={counterValue === minCount}/>
                 </div>
             </div>
+
             <div className="Wrapper__Counter">
                 <div className="Wrapper__Settings">
                     <div className="Wrapper__Settings-Input">
                         <div>max value:</div>
-                        <input className="Input"></input>
+                        <input className="Input" onInput={limitToDigits} maxLength={2}
+                               onKeyDown={handleArrowKeys} value={inputValue}></input>
                     </div>
                     <div className="Wrapper__Settings-Input">
                         <div>start value:</div>
@@ -69,7 +54,7 @@ function App() {
                     </div>
                 </div>
                 <div>
-                    <Button name={'Set'} callBack={resetValue} isDisabled={counterValue === minCount}/>
+                    <Button name={'Set'} callBack={setButtonCklick} isDisabled={counterValue === minCount}/>
                 </div>
             </div>
         </div>
